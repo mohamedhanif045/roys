@@ -18,8 +18,17 @@ list.addEventListener("click", function(e){
     e.target.remove()
 })
 
-list.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        addItem();
+
+document.addEventListener("keydown",function(e){
+    if((e.key==="Enter")){
+
+        const list=document.createElement("list")
+        list.textContent=input.value;
+        list.classList.add("list-group-item","category-Tag")
+        todolist.append(list)
+        input.value=""
     }
-});
+   
+    dontRepeat();
+    
+})
